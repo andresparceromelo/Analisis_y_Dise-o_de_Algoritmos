@@ -45,17 +45,26 @@ class Solution:
 # print(prueba.findMaxConsecutiveOnes([1,1,0,1,1,1]))
     
     def findErrorNums(self, nums: list[int]) -> list[int]:
-        last_number = None
+        if not nums:
+            return None
+        
+        if len(nums) == 1:
+            return nums[0]
+            
         for _ in nums:
-            if last_number == None:
-                last_number = _
 
-            else:
-                if last_number == _:
-                    return last_number-1, last_number
+            if _ == nums[_+1]:
+                return _, _+1
+            
+            last_number = _
+            
+
+                    
+
+                
                 
 
 prueba = Solution()
-print(prueba.findMaxConsecutiveOnes([1,2,4,4,5,6]))   
+print(prueba.findErrorNums([1,1]))   
         
         
